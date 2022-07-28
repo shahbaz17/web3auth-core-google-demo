@@ -49,6 +49,9 @@ function App() {
         setWeb3auth(web3auth);
 
         await web3auth.init();
+        if (web3auth.provider) {
+          setProvider(web3auth.provider);
+        }
       } catch (error) {
         console.error(error);
       }
