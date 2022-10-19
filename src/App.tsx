@@ -8,10 +8,16 @@ import {
 import { OpenloginAdapter } from "@web3auth/openlogin-adapter";
 import "./App.css";
 // import RPC from "./evm.web3";
-import RPC from "./evm.ethers";
+// import RPC from './evm.ethers';
+import RPC from "./solanaRPC";
 
 const clientId =
   "BG7vMGIhzy7whDXXJPZ-JHme9haJ3PmV1-wl9SJPGGs9Cjk5_8m682DJ-lTDmwBWJe-bEHYE_t9gw0cdboLEwR8"; // get from https://dashboard.web3auth.io
+
+const rpcTarget =
+  process.env.REACT_APP_QUICKNODE || "https://rpc.ankr.com/solana";
+
+console.log("RPC TARGET: ", rpcTarget);
 
 function App() {
   const [web3auth, setWeb3auth] = useState<Web3AuthCore | null>(null);
@@ -23,10 +29,15 @@ function App() {
     const init = async () => {
       try {
         const web3auth = new Web3AuthCore({
-          clientId,
+          clientId, // get from https://dashboard.web3auth.io
           chainConfig: {
-            chainNamespace: CHAIN_NAMESPACES.EIP155,
-            chainId: "0x5",
+            chainNamespace: CHAIN_NAMESPACES.SOLANA,
+            chainId: "0x3", // Please use 0x1 for Mainnet, 0x2 for Testnet, 0x3 for Devnet
+            rpcTarget,
+            displayName: "Solana Devnet",
+            blockExplorer: "https://explorer.solana.com/?cluster=devnet",
+            ticker: "SOL",
+            tickerName: "Solana Token",
           },
         });
 
@@ -129,7 +140,7 @@ function App() {
       return;
     }
     const rpc = new RPC(provider);
-    const result = await rpc.signAndSendTransaction();
+    const result = await rpc.sendTransaction();
     uiConsole(result);
   };
 
