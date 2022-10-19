@@ -25,7 +25,7 @@ function App() {
         const web3auth = new Web3AuthCore({
           chainConfig: {
             chainNamespace: CHAIN_NAMESPACES.EIP155,
-            chainId: "0x3",
+            chainId: "0x5",
           },
         });
 
@@ -199,18 +199,11 @@ function App() {
 
       <footer className="footer">
         <a
-          href="https://github.com/Web3Auth/examples/tree/master/google-core-react-example"
+          href="https://github.com/shahbaz17/web3auth-core-google-demo"
           target="_blank"
           rel="noopener noreferrer"
         >
           Source code
-        </a>
-        <a
-          href="https://faucet.egorfine.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ropsten Faucet
         </a>
       </footer>
     </div>
