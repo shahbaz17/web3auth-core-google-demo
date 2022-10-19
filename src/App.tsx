@@ -17,8 +17,6 @@ const clientId =
 const rpcTarget =
   process.env.REACT_APP_QUICKNODE || "https://rpc.ankr.com/solana";
 
-console.log("RPC TARGET: ", rpcTarget);
-
 function App() {
   const [web3auth, setWeb3auth] = useState<Web3AuthCore | null>(null);
   const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(
