@@ -14,8 +14,8 @@ import RPC from "./solanaRPC";
 const clientId =
   "BG7vMGIhzy7whDXXJPZ-JHme9haJ3PmV1-wl9SJPGGs9Cjk5_8m682DJ-lTDmwBWJe-bEHYE_t9gw0cdboLEwR8"; // get from https://dashboard.web3auth.io
 
-const rpcTarget =
-  process.env.REACT_APP_QUICKNODE || "https://rpc.ankr.com/solana";
+// const rpcTarget =
+//   process.env.REACT_APP_QUICKNODE || "https://rpc.ankr.com/solana";
 
 function App() {
   const [web3auth, setWeb3auth] = useState<Web3AuthCore | null>(null);
