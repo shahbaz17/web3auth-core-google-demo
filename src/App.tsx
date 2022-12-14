@@ -31,7 +31,7 @@ function App() {
           chainConfig: {
             chainNamespace: CHAIN_NAMESPACES.SOLANA,
             chainId: "0x3", // Please use 0x1 for Mainnet, 0x2 for Testnet, 0x3 for Devnet
-            rpcTarget,
+            rpcTarget: "https://api.devnet.solana.com",
             displayName: "Solana Devnet",
             blockExplorer: "https://explorer.solana.com/?cluster=devnet",
             ticker: "SOL",
